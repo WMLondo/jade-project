@@ -10,31 +10,32 @@ import Image from "../../Image/Image";
 import Button from "../../Button/Button";
 import Tag from "../../Tag/Tag";
 import RatingTag from "../../RatingTag/RatingTag";
+import { useDispatch } from "react-redux";
+import { addingItemCart } from "../../../../features/cart/cartSlice";
 
-const ProductCard = ({
-  imgUrl,
-  imgAlt,
-  productBrand,
-  productTitle,
-  productPrice,
-  buttonLabel,
-}) => {
+const ProductCard = ({ item, buttonLabel }) => {
+  const dispatch = useDispatch();
+  const { productBrand, productName, productImage, productDescription } =
+    item.product;
+  const addingItemHandle = () => {
+    dispatch(addingItemCart(item));
+  };
   return (
     <ProductCardContainer>
       <Image
-        url={imgUrl}
+        url={productImage}
         width="100%"
         height="202px"
-        alt={imgAlt}
+        alt={productDescription}
         borderRadius="12px 12px 0px 0px"
       />
       <ContentContainer>
         <Tag>{productBrand}</Tag>
-        <ProductTitle>{productTitle}</ProductTitle>
+        <ProductTitle>{productName}</ProductTitle>
         <RatingTag />
         <ActionContainer>
-          <PriceLabel>L. {productPrice}</PriceLabel>
-          <Button>{buttonLabel}</Button>
+          <PriceLabel>L. {item.itemPrice}</PriceLabel>
+          <Button onClick={addingItemHandle}>{buttonLabel}</Button>
         </ActionContainer>
       </ContentContainer>
     </ProductCardContainer>
