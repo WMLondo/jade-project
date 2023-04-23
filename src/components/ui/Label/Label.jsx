@@ -1,8 +1,8 @@
 import React from "react";
-import { Label } from "./Label.styles";
+import { LabelContent } from "./Label.styles";
 
 const Label = ({ children }) => {
-  return <Label>{children}</Label>;
+  return <LabelContent>{children}</LabelContent>;
 };
 
 export default Label;

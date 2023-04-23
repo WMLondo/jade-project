@@ -7,6 +7,7 @@ import Store from "./pages/Store/Store";
 import Layout from "./pages/Layout/PageLayout";
 import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
+import Checkout from "./components/Checkout/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
         element: <Store />,
       },
     ],
+  },
+  {
+    path: "checkout",
+    element: <Checkout />,
   },
   { path: "iniciar-sesion", element: <SignIn /> },
   { path: "registrarme", element: <SignUp /> },

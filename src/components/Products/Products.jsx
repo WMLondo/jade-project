@@ -5,7 +5,7 @@ import ProductCard from "../ui/Card/ProductCard/ProductCard";
 import { DUMMYPRODUCTS } from "../../data/DummyProduct";
 import { SORTOPTIONPRODUCT } from "../../data/SortOptionProduct/SortOptionProduct";
 
-const Products = () => {
+const Products = ({}) => {
   let content = <h3>No existen productos disponibles</h3>;
 
   if (DUMMYPRODUCTS.length > 0) {

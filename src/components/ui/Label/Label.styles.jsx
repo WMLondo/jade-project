@@ -1,4 +1,6 @@
-const Label = styled.label`
+import styled from "styled-components";
+
+export const LabelContent = styled.label`
   font-family: "PTSans";
   font-style: normal;
   font-weight: 700;

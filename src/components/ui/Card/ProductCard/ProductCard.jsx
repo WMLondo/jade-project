@@ -12,13 +12,20 @@ import Tag from "../../Tag/Tag";
 import RatingTag from "../../RatingTag/RatingTag";
 import { useDispatch } from "react-redux";
 import { addingItemCart } from "../../../../features/cart/cartSlice";
+import useRandomHash from "../../../../hooks/useRandomHash";
 
 const ProductCard = ({ item, buttonLabel }) => {
   const dispatch = useDispatch();
   const { productBrand, productName, productImage, productDescription } =
     item.product;
   const addingItemHandle = () => {
-    dispatch(addingItemCart(item));
+    const objectCartItem = {
+      cartItemId: useRandomHash(11),
+      item: item,
+      qty: 1,
+      totalPrice: item.itemPrice * 1,
+    };
+    dispatch(addingItemCart(objectCartItem));
   };
   return (
     <ProductCardContainer>

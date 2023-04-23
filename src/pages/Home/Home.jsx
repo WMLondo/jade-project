@@ -6,7 +6,6 @@ import LastTendecy from "../../components/LastAddedItems/LastAddedItems";
 import Services from "../../components/Services/Services";
 import Divider from "../../components/ui/Divider/Divider";
 import Tendecy from "../../components/Tendecy/Tendecy";
-import Guide from "../../components/Guides/Guide";
 
 const Home = () => {
   return (
@@ -17,7 +16,6 @@ const Home = () => {
       <Divider />
       <Tendecy />
       <Divider />
-      <Guide />
     </main>
   );
 };

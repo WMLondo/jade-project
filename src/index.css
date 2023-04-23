@@ -39,7 +39,7 @@
   /* Colors */
   --neutral-color-max: #ffffff;
   --neutral-color-max-50: #f1f1f1;
-  --neutral-color-max-100: #121212;
+  --neutral-color-min-50: #121212;
   --neutral-color-min-100: #2c2c2c;
   --neutral-color-min-200: #454545;
   --neutral-color-min-300: #5e5e5e;
@@ -106,6 +106,7 @@ body {
   font-family: "PTSans", sans-serif;
   font-size: 16px;
   box-sizing: border-box;
+  overflow: auto;
 }
 
 /**
