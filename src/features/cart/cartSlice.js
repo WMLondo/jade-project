@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import useRandomHash from "../../hooks/useRandomHash";
 
 const initialState = {
   cartId: "",
@@ -15,7 +14,7 @@ export const cartSlice = createSlice({
   reducers: {
     addingItemCart: (state, action) => {
       try {
-        if (state.cartId === "") state.cartId = useRandomHash(11);
+        if (state.cartId === "") state.cartId = crypto.randomUUID();
 
         const existingProductIndex = state.cartItems.findIndex(
           (cartItem) => cartItem.item.itemId === action.payload.item.itemId

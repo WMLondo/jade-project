@@ -10,8 +10,8 @@ import {
   ContentContainerBgDark,
 } from "./QuickViewCard.styles";
 
-const QuickViewCard = ({ product, quickViewHandler }) => {
-  const { productImage, productBrand, productName } = product;
+const QuickViewCard = ({ item, quickViewHandler }) => {
+  const { productImage, productBrand, productName } = item.product;
   let title = productName;
 
   if (productName.length > 34) {
@@ -36,14 +36,14 @@ const QuickViewCard = ({ product, quickViewHandler }) => {
           {productBrand}
         </Tag>
         <Title>{title}</Title>
-        <Button onClick={quickViewHandler}>VISTA RAPIDA</Button>
+        <Button onClick={() => quickViewHandler(item)}>VISTA RAPIDA</Button>
       </ContentContainer>
     </QuickViewCardContainer>
   );
 };
 
-export const QuickViewCardBgDark = ({ product, quickViewHandler }) => {
-  const { productImage, productBrand, productName } = product;
+export const QuickViewCardBgDark = ({ item, quickViewHandler }) => {
+  const { productImage, productBrand, productName } = item.product;
   let title = productName;
 
   if (productName.length > 34) {
@@ -67,7 +67,7 @@ export const QuickViewCardBgDark = ({ product, quickViewHandler }) => {
           {productBrand}
         </Tag>
         <Title>{title}</Title>
-        <Button onClick={quickViewHandler}>VISTA RAPIDA</Button>
+        <Button onClick={() => quickViewHandler(item)}>VISTA RAPIDA</Button>
       </ContentContainerBgDark>
     </QuickViewCardContainerBgDark>
   );

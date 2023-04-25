@@ -6,7 +6,6 @@ import {
   reducingItemCart,
   deletingItemCart,
 } from "../../../features/cart/cartSlice";
-import useRandomHash from "../../../hooks/useRandomHash";
 import classes from "./CartItems.module.css";
 import Divider from "../../ui/Divider/Divider";
 import PriceDescription from "../../ui/PriceDescription/PriceDescription";
@@ -35,7 +34,7 @@ const CartItems = () => {
         {cart.cartItems.map((cartItem) => {
           return (
             <CartItem
-              key={useRandomHash(5)}
+              key={crypto.randomUUID()}
               cartItem={cartItem}
               addHandler={() => addingQtyCartItemHandler(cartItem)}
               reducingHandler={() => reducingQtyCartItemHandler(cartItem)}

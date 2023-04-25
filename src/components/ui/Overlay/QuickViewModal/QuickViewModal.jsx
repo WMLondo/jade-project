@@ -3,36 +3,49 @@ import {
   ContentContainer,
   ModalContainer,
   Price,
-  QuickViewButton,
   Sku,
   Title,
   ExitIcon,
 } from "./QuickViewModal.styles";
-import { GrBasket } from "react-icons/gr";
-import { useDispatch } from "react-redux";
+import Button from "../../Button/Button";
+import { BsBasket2 } from "react-icons/bs";
+
 import Image from "../../Image/Image";
 
-const QuickViewModal = ({ item, addingToCartHandler, exitHandler }) => {
-  const dispatch = useDispatch();
-  const { productTitle, productPrice, productImage } = item.product;
-  const { itemSku } = item;
+const QuickViewModal = ({ item, addingHandler, exitHandler }) => {
+  const { productName, productImage } = item.product;
+  const { itemSku, itemPrice } = item;
   return (
     <ModalContainer>
       <Image
         width="290px"
-        height="332px"
+        height="cal(100% - 32px)"
         borderRadius="12px"
         url={productImage}
       />
       <ContentContainer>
-        <ExitIcon />
-        <Title>{productTitle}</Title>
+        <ExitIcon onClick={exitHandler} />
+        <Title>{productName}</Title>
         <Sku>SKU: {itemSku || "00000"}</Sku>
-        <Price>L. {productPrice || "00.00"}</Price>
-        <QuickViewButton onClick={addingToCartHandler}>
-          <GrBasket style={{ width: "16px", height: "16px" }} />
+        <Price>L. {itemPrice || "00.00"}</Price>
+        <Button
+          onClick={addingHandler}
+          style={{
+            width: "100%",
+            height: "54px",
+            gap: "8px",
+            color: "var(--neutral-color-max)",
+            fontSize: "var(--font-size-l)",
+          }}
+        >
+          <BsBasket2
+            style={{
+              width: "var(--font-size-l)",
+              height: "var(--font-size-l)",
+            }}
+          />
           Agregar Al Carrito
-        </QuickViewButton>
+        </Button>
       </ContentContainer>
     </ModalContainer>
   );

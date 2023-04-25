@@ -16,7 +16,6 @@ import Divider from "../../../ui/Divider/Divider";
 
 const CartItem = ({ cartItem, addHandler, reducingHandler, deleteHandler }) => {
   const { qty, totalPrice } = cartItem;
-  const { itemVariants } = cartItem.item;
   const { productImage, productName } = cartItem.item.product;
   return (
     <>
@@ -31,9 +30,10 @@ const CartItem = ({ cartItem, addHandler, reducingHandler, deleteHandler }) => {
         <ContentContainer>
           <ItemTitle>{productName}</ItemTitle>
           <ItemVariant>
-            {itemVariants.map((variant) => {
-              return <span>{variant.name} /</span>;
-            })}
+            {cartItem.item.itemVariants &&
+              cartItem.item.itemVariants.map((variant) => {
+                return <span>{variant.name} /</span>;
+              })}
           </ItemVariant>
           <DeleteItemOption onClick={deleteHandler}>
             <BsFillTrashFill />
