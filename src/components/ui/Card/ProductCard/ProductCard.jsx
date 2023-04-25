@@ -39,7 +39,6 @@ const ProductCard = ({ item, buttonLabel }) => {
       <ContentContainer>
         <Tag>{productBrand}</Tag>
         <ProductTitle>{productName}</ProductTitle>
-        <RatingTag />
         <ActionContainer>
           <PriceLabel>L. {item.itemPrice}</PriceLabel>
           <Button onClick={addingItemHandle}>{buttonLabel}</Button>

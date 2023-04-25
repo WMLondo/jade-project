@@ -28,6 +28,7 @@ const OptionCard = (props) => {
         <Button
           variant={classes.variant}
           style={{ margin: `${props.contentMargin}` }}
+          onClick={props.buttonClick}
         >
           {props.buttonLabel}
         </Button>

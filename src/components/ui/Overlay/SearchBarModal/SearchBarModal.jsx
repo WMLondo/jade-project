@@ -1,0 +1,76 @@
+import {
+  SearchBarContainer,
+  ExitIcon,
+  ModalContainer,
+  OptionResults,
+  OptionResult,
+} from "./SearchBarModal.styles";
+import Field from "../../Input/Field/Field";
+import Button from "../../Button/Button";
+import { IoSearch } from "react-icons/io5";
+import { useState, useEffect } from "react";
+import useHttp from "../../../../hooks/useHttp";
+import Divider from "../../Divider/Divider";
+import LoadingSpinner from "../../LoadingSpinner/LoadingSpinner";
+
+const SearchBarModal = ({ exitHandler, searchSubmitHandler }) => {
+  const [inputSearch, setInputSeach] = useState("");
+  const { data, error } = useHttp("items");
+  const [loading, setLoading] = useState(false);
+  const [items, setItems] = useState([]);
+
+  const inputSearchChangeHandler = (e) => {
+    setInputSeach(e.target.value);
+  };
+
+  const searchSimilarItemsHandler = async () => {
+    setLoading(false);
+    await setItems(data.filter((item) => item.product === inputSearch));
+    setLoading(true);
+    if (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    searchSimilarItemsHandler;
+  }, [inputSearch]);
+
+  return (
+    <ModalContainer>
+      <SearchBarContainer>
+        <ExitIcon onClick={exitHandler} />
+        <Field
+          style={{ width: "448px", height: "52px" }}
+          value={inputSearch}
+          onChange={inputSearchChangeHandler}
+          placeholder="Buscar Producto"
+        />
+        <Button
+          style={{ width: "204px", height: "52px" }}
+          onClick={() => searchSubmitHandler(inputSearch)}
+        >
+          BUSCAR
+          <IoSearch />
+        </Button>
+      </SearchBarContainer>
+      {loading && <LoadingSpinner />}
+      {items.length > 0 && (
+        <OptionResults>
+          <Divider />
+          {items.map((item) => {
+            return (
+              <OptionResult
+                onClick={() => setInputSeach(item.product.productName)}
+              >
+                {item.product.productName}
+              </OptionResult>
+            );
+          })}
+        </OptionResults>
+      )}
+    </ModalContainer>
+  );
+};
+
+export default SearchBarModal;

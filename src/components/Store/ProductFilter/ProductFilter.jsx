@@ -1,10 +1,10 @@
 import React from "react";
-import Label from "../ui/Label/Label";
-import ComboBox from "../ui/Input/ComboBox/ComboBox";
-import Checkbox from "../ui/Input/CheckBox/CheckBox";
-import RadioButton from "../ui/Input/Radio Button/RadioButton";
-import Field from "../ui/Input/Field/Field";
-import Button, { DangerButton } from "../ui/Button/Button";
+import Label from "../../ui/Label/Label";
+import ComboBox from "../../ui/Input/ComboBox/ComboBox";
+import Checkbox from "../../ui/Input/CheckBox/CheckBox";
+import RadioButton from "../../ui/Input/Radio Button/RadioButton";
+import Field from "../../ui/Input/Field/Field";
+import Button, { DangerButton } from "../../ui/Button/Button";
 
 const ProductFilter = () => {
   return (

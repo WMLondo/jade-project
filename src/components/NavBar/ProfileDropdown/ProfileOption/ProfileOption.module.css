@@ -1,0 +1,21 @@
+.option {
+    display: flex;
+    font-weight: 700;
+    width: 100%;
+    height: auto;
+    padding: 16px 8px;
+    gap: 8px;
+    background-color: var(--neutral-color-max);
+    color: var(--neutral-color-min-200);
+    text-align: start;
+    font-size: var(--font-size-m);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.option:hover {
+    background-color: var(--neutral-color-max-50);
+    color: var(--neutral-color-min-100)
+}

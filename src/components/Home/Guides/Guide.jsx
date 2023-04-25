@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./Guide.module.css";
-import GuideCard from "../ui/Card/GuideCard/GuideCard";
+import GuideCard from "../../ui/Card/GuideCard/GuideCard";
 
 const Guide = () => {
   return (

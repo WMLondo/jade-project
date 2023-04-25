@@ -10,46 +10,64 @@ import {
   ContentContainerBgDark,
 } from "./QuickViewCard.styles";
 
-const QuickViewCard = ({ imageUrl, tagLabel, tagUrl, titleLabel }) => {
+const QuickViewCard = ({ product, quickViewHandler }) => {
+  const { productImage, productBrand, productName } = product;
+  let title = productName;
+
+  if (productName.length > 34) {
+    title = productName.substring(0, 31);
+    title += "...";
+  }
+
   return (
     <QuickViewCardContainer>
       <Image
-        url={imageUrl}
+        url={productImage}
         width="100%"
         height="150px"
         borderRadius="12px 12px 0px 0px"
       />
       <ContentContainer>
-        <Tag url={tagUrl || "/"} w="67px" h="auto">
-          {tagLabel}
+        <Tag
+          url={`tienda/${productBrand.toLowerCase()}` || "/"}
+          w="67px"
+          h="auto"
+        >
+          {productBrand}
         </Tag>
-        <Title>{titleLabel}</Title>
-        <Button>VISTA RAPIDA</Button>
+        <Title>{title}</Title>
+        <Button onClick={quickViewHandler}>VISTA RAPIDA</Button>
       </ContentContainer>
     </QuickViewCardContainer>
   );
 };
 
-export const QuickViewCardBgDark = ({
-  imageUrl,
-  tagLabel,
-  tagUrl,
-  titleLabel,
-}) => {
+export const QuickViewCardBgDark = ({ product, quickViewHandler }) => {
+  const { productImage, productBrand, productName } = product;
+  let title = productName;
+
+  if (productName.length > 34) {
+    title = productName.substring(0, 31);
+    title += "...";
+  }
   return (
     <QuickViewCardContainerBgDark>
       <Image
-        url={imageUrl}
+        url={productImage}
         width="100%"
         height="150px"
         borderRadius="12px 12px 0px 0px"
       />
       <ContentContainerBgDark>
-        <Tag url={tagUrl || "/"} w="67px" h="auto">
-          {tagLabel}
+        <Tag
+          url={`tienda/${productBrand.toLowerCase()}` || "/"}
+          w="67px"
+          h="auto"
+        >
+          {productBrand}
         </Tag>
-        <Title>{titleLabel}</Title>
-        <Button>VISTA RAPIDA</Button>
+        <Title>{title}</Title>
+        <Button onClick={quickViewHandler}>VISTA RAPIDA</Button>
       </ContentContainerBgDark>
     </QuickViewCardContainerBgDark>
   );

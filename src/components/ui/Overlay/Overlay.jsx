@@ -4,15 +4,14 @@ import ReactDOM from "react-dom";
 const Overlay = ({
   isOpen,
   children,
-  exitHandler,
   justifyContent,
   alignItems,
 }) => {
+
   return ReactDOM.createPortal(
     <>
       {isOpen && (
         <OverlayContainer
-          onClick={exitHandler}
           justifyContent={justifyContent}
           alignItems={alignItems}
         >

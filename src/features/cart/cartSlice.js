@@ -91,6 +91,7 @@ export const cartSlice = createSlice({
       }
     },
     toggleCart: (state) => {
+      state.cartStatus = "";
       state.isOpen = !state.isOpen;
     },
   },

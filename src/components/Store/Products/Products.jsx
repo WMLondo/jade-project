@@ -1,11 +1,12 @@
 import React from "react";
 import classes from "./Products.module.css";
-import ComboBox from "../ui/Input/ComboBox/ComboBox";
-import ProductCard from "../ui/Card/ProductCard/ProductCard";
-import { DUMMYPRODUCTS } from "../../data/DummyProduct";
-import { SORTOPTIONPRODUCT } from "../../data/SortOptionProduct/SortOptionProduct";
+import ComboBox from "../../ui/Input/ComboBox/ComboBox";
+import ProductCard from "../../ui/Card/ProductCard/ProductCard";
+import useHttp from "../../../hooks/useHttp";
+import { SORTOPTIONPRODUCT } from "../../../data/SortOptionProduct/SortOptionProduct";
 
 const Products = ({}) => {
+  const { data, isLoading, error } = useHttp("products");
   let content = <h3>No existen productos disponibles</h3>;
 
   if (DUMMYPRODUCTS.length > 0) {
