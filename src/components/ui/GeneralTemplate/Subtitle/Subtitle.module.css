@@ -1,0 +1,8 @@
+.subtitle {
+    font-size: var(--neutral-color-min-100);
+    font-weight: 700;
+    text-align: left;
+    margin: 32px 0 16px 0;
+    font-size: var(--font-size-xl);
+    line-height: 1.5;
+}

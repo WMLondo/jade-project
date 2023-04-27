@@ -44,3 +44,11 @@ export const RadioCheckmark = styled.span`
     opacity: 1;
   }
 `;
+
+export const RadioButtonLabel = styled.span`
+  font-family: "PTSans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  line-height: 24px;
+`;

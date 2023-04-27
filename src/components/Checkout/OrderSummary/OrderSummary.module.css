@@ -1,0 +1,14 @@
+.product-container {
+    padding: 16px;
+    width: 100%;
+    max-width: calc(100% - 32px);
+}
+
+.result-container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    height: 210px;
+    padding: 16px;
+}

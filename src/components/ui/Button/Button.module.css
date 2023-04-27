@@ -32,19 +32,30 @@ button[disabled] {
 
 /* DangerButton CSS */
 .danger-button {
-    background-color: var(--danger-color-linear-gradient-500-to-400-transform-180);
-    box-shadow: none;
+    padding: 14px 28px;
+    font-size: var(--font-size-m);
+    font-weight: 700;
+    font-family: "PTSans", sans-serif;
+    color: var(--neutral-color-max);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    gap: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--danger-color-linear-gradient-500-to-400-transform-180);
 }
 
 .danger-button:hover {
-    background-color: var(--danger-color-500);
+    background: var(--danger-color-500);
 }
 
 .danger-button:active {
-    background-color: var(--danger-color-600);
+    background: var(--danger-color-600);
 }
 
 .danger-button:disabled,
 button[disabled].danger-button {
-    background-color: var(--danger-color-disabled);
+    background: var(--danger-color-disabled);
 }

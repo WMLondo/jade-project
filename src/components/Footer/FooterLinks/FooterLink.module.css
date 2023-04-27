@@ -1,0 +1,35 @@
+.links-container {
+    min-width: 207px;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    font-family: "PTSans";
+}
+
+.title {
+    color: var(--primary-color-300);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+}
+
+.links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    flex-direction: column;
+    font-family: 'PTSans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-size-m);
+    line-height: 27px;
+    padding: 0;
+}
+
+.element {
+    list-style: none;
+}

@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set } from "firebase/database";
-import { JsonItems } from "./data/jsonItems";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,

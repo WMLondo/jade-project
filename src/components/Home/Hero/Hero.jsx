@@ -7,7 +7,7 @@ import fourthOptionImage from "../../../assets/img/homeImg/option-4.png";
 import fiveOptionImage from "../../../assets/img/homeImg/option-5.png";
 
 import classes from "./Hero.module.css";
-import { useNavigate } from "react-router-dom";
+import { createSearchParams, useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -40,7 +40,14 @@ const Hero = () => {
               title="Nuevos Productos"
               buttonLabel="EXPLORAR LA NUEVA LINEA"
               contentMargin="0px auto"
-              buttonClick={() => navigate("tienda?search=nueva-linea")}
+              buttonClick={() =>
+                navigate({
+                  pathname: "tienda",
+                  search: createSearchParams({
+                    query: "nuevos-productos",
+                  }).toString(),
+                })
+              }
             />
           </div>
           <div className={classes["row-container"]}>
@@ -50,7 +57,14 @@ const Hero = () => {
               title="Tendencia de Productos"
               buttonLabel="VER PRODUCTOS EN TENDENCIA"
               contentMargin="0px auto"
-              buttonClick={() => navigate("tienda?search=tendencia-producto")}
+              buttonClick={() =>
+                navigate({
+                  pathname: "tienda",
+                  search: createSearchParams({
+                    query: "tendencia",
+                  }).toString(),
+                })
+              }
             />
             <OptionCard
               src={fiveOptionImage}
@@ -59,7 +73,12 @@ const Hero = () => {
               paragraph="Descubre nuestra selección de productos de cuidado de la piel de calidad para ayudarte a alcanzar tu mejor piel. "
               buttonLabel="DESCUBRE MAS"
               buttonClick={() =>
-                navigate("tienda?search=descubre-tu-mejor-piel")
+                navigate({
+                  pathname: "tienda",
+                  search: createSearchParams({
+                    query: "descubre mas",
+                  }).toString(),
+                })
               }
             />
           </div>

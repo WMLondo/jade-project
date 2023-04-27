@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const StyledSpinner = styled.svg`
+  justify-self: center;
+  align-self: center;
   animation: rotate 2s linear infinite;
   margin: -25px 0 0 -25px;
   width: 50px;

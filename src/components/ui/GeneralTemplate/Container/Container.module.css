@@ -1,0 +1,9 @@
+.container {
+    padding: 64px;
+    color: var(--neutral-color-min-100);
+    height: auto;
+    font-family: "PTSans";
+    display: flex;
+    flex-direction: column;
+    background-color: var(--neutral-color-max);
+}

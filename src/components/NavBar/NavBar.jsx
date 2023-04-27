@@ -27,7 +27,7 @@ const NavBar = ({ toggleSearch }) => {
         Categorias
         <FaChevronDown className={classes.icon} />
       </NavElement>
-      <NavElement path="">
+      <NavElement path="/">
         <Logo />
       </NavElement>
       <NavElement path="marcas">

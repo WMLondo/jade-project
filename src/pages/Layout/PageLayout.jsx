@@ -13,6 +13,7 @@ import Cart from "../../components/Cart/Cart";
 import { useDispatch, useSelector } from "react-redux";
 import SearchBarModal from "../../components/ui/Overlay/SearchBarModal/SearchBarModal";
 import { useState } from "react";
+import ScrollToTop from "../../helpers/ScrollToTop";
 
 const PageLayout = () => {
   const dispatch = useDispatch();
@@ -20,18 +21,25 @@ const PageLayout = () => {
   const navigate = useNavigate();
   const cartIsOpen = useSelector((state) => state.cart.isOpen);
   const cartStatus = useSelector((state) => state.cart.cartStatus);
+  ScrollToTop();
 
   const toggleSearch = () => {
     setIsSearchOpen((isOpen) => !isOpen);
   };
 
   const querySearchHandler = (searchValue) => {
-    navigate({
-      pathname: "tienda",
-      search: createSearchParams({
-        query: searchValue.toLowerCase(),
-      }).toString(),
-    });
+    if (searchValue.length !== 0)
+      navigate({
+        pathname: "tienda",
+        search: createSearchParams({
+          query: searchValue.toLowerCase(),
+        }).toString(),
+      });
+    else
+      navigate({
+        pathname: "tienda",
+      });
+    toggleSearch();
   };
 
   return (

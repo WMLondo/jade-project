@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   ActionContainer,
   ContentContainer,
@@ -9,14 +9,14 @@ import {
 import Image from "../../Image/Image";
 import Button from "../../Button/Button";
 import Tag from "../../Tag/Tag";
-import RatingTag from "../../RatingTag/RatingTag";
 import { useDispatch } from "react-redux";
 import { addingItemCart } from "../../../../features/cart/cartSlice";
+import { createSearchParams } from "react-router-dom";
 
 const ProductCard = ({ item, buttonLabel }) => {
   const dispatch = useDispatch();
-  const { productBrand, productName, productImage, productDescription } =
-    item.product;
+  const { productImage, productName ,productBrand} = item.product;
+
   const addingItemHandle = () => {
     const objectCartItem = {
       cartItemId: crypto.randomUUID(),
@@ -26,24 +26,38 @@ const ProductCard = ({ item, buttonLabel }) => {
     };
     dispatch(addingItemCart(objectCartItem));
   };
+
   return (
-    <ProductCardContainer>
-      <Image
-        url={productImage}
-        width="100%"
-        height="202px"
-        alt={productDescription}
-        borderRadius="12px 12px 0px 0px"
-      />
-      <ContentContainer>
-        <Tag>{productBrand}</Tag>
-        <ProductTitle>{productName}</ProductTitle>
-        <ActionContainer>
-          <PriceLabel>L. {item.itemPrice}</PriceLabel>
-          <Button onClick={addingItemHandle}>{buttonLabel}</Button>
-        </ActionContainer>
-      </ContentContainer>
-    </ProductCardContainer>
+    <>
+      {item && (
+        <ProductCardContainer>
+          <Image
+            url={productImage}
+            width="100%"
+            height="202px"
+            alt={productName}
+            borderRadius="12px 12px 0px 0px"
+          />
+          <ContentContainer>
+            <Tag
+              url={{
+                pathname: "tienda",
+                search: createSearchParams({
+                  query: productBrand.toLowerCase(),
+                }).toString(),
+              }}
+            >
+              {productBrand}
+            </Tag>
+            <ProductTitle>{productName}</ProductTitle>
+            <ActionContainer>
+              <PriceLabel>L. {item.itemPrice}</PriceLabel>
+              <Button onClick={addingItemHandle}>{buttonLabel}</Button>
+            </ActionContainer>
+          </ContentContainer>
+        </ProductCardContainer>
+      )}
+    </>
   );
 };
 

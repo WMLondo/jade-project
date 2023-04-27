@@ -2,14 +2,15 @@ import {
   RadioContainer,
   RadioInput,
   RadioCheckmark,
+  RadioButtonLabel,
 } from "./RadioButton.styles";
 
 const RadioButton = (props) => {
   return (
     <RadioContainer htmlFor={props.id}>
-      <RadioInput id={props.id} {...props} />
+      <RadioInput id={props.id} value={props.value} {...props} />
       <RadioCheckmark />
-      {props.children}
+      <RadioButtonLabel>{props.label}</RadioButtonLabel>
     </RadioContainer>
   );
 };

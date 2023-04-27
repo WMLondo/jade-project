@@ -13,13 +13,13 @@ const Button = (props) => {
 const DangerButton = (props) => {
   return (
     <>
-      <Button
+      <button
         onClick={props.click}
         className={`${classes["danger-button"]} ${props.variant || ""}`}
         {...props}
       >
         {props.children}
-      </Button>
+      </button>
     </>
   );
 };

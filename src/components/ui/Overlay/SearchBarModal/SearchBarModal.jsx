@@ -19,7 +19,7 @@ const SearchBarModal = ({ exitHandler, searchSubmitHandler }) => {
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState([]);
 
-  const inputSearchChangeHandler = (e) => {
+  const onSearchChangeHandler = (e) => {
     setInputSeach(e.target.value);
   };
 
@@ -43,8 +43,11 @@ const SearchBarModal = ({ exitHandler, searchSubmitHandler }) => {
         <Field
           style={{ width: "448px", height: "52px" }}
           value={inputSearch}
-          onChange={inputSearchChangeHandler}
+          onChange={onSearchChangeHandler}
           placeholder="Buscar Producto"
+          onKeyPress={(e) => {
+            if (e.key === "Enter") searchSubmitHandler(inputSearch);
+          }}
         />
         <Button
           style={{ width: "204px", height: "52px" }}

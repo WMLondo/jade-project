@@ -44,7 +44,7 @@ export const CheckboxCheckmark = styled.span`
 `;
 
 export const CheckboxLabel = styled.span`
-  font-family: "PT Sans";
+  font-family: "PTSans";
   font-style: normal;
   font-weight: 400;
   font-size: var(--font-size-m);

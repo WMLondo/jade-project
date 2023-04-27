@@ -1,0 +1,40 @@
+.filter-container {
+    width: 332px;
+    height: fit-content;
+    display: flex;
+    color: var(--neutral-color-max);
+    background-color: var(--neutral-color-min-100);
+    border-radius: 12px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.25);
+    padding: 32px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+}
+
+
+
+.label {
+    font-family: "PTSans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 23px;
+    color: var(--neutral-color-max);
+    margin-bottom: 8px;
+}
+
+.action-container {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 16px;
+}

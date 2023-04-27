@@ -1,23 +1,20 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const active = css`
-  color: var(--primary-color-500);
-`;
 export const StylesLink = styled(Link)`
   text-decoration: none;
-  color: var(--neutral-color-min);
+  font-family: "PTSans";
+  color: ${(props) => props.color || "var(--neutral-color-max)"};
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--font-size-m);
   line-height: 21px;
   text-decoration: none;
   display: flex;
   justify-content: center;
   cursor: pointer;
   align-items: center;
-  ${(props) => isActive && active}
-
-  & :hover {
+  &:hover {
     text-decoration: underline;
     color: var(--primary-color-300);
   }

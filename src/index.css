@@ -76,6 +76,17 @@
   --font-size-xxl: 32px;
 }
 
+.fadeinup-enter {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.fadeinup-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms, transform 500ms;
+}
+
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 

@@ -1,52 +1,38 @@
-import React from "react";
-import Label from "../../ui/Label/Label";
-import ComboBox from "../../ui/Input/ComboBox/ComboBox";
+import React, { useEffect, useState } from "react";
 import Checkbox from "../../ui/Input/CheckBox/CheckBox";
 import RadioButton from "../../ui/Input/Radio Button/RadioButton";
-import Field from "../../ui/Input/Field/Field";
 import Button, { DangerButton } from "../../ui/Button/Button";
+import classes from "./ProductFilter.module.css";
+import { useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
+import ProductFilterBrand from "./ProductFilterBrand/ProductFilterBrand";
 
 const ProductFilter = () => {
+  const [formValues, setFormValues] = useState({});
+  const [searchParams] = useSearchParams();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
+
   return (
-    <form>
-      <h2>Filtro</h2>
-      <div>
-        <Label htmlFor="brand">Marca</Label>
-        <ComboBox id="brand" />
-      </div>
-      <div>
-        <Label htmlFor="ingredients">Preferencia de Ingredientes</Label>
-        <ComboBox id="ingredients" />
-      </div>
-      <fieldset>
-        <legend>Valoraciones</legend>
-        <Checkbox label="4 o más estrellas" />
-        <Checkbox label="3 o más estrellas" />
-        <Checkbox label="2 o más estrellas" />
-        <Checkbox label="1 o más estrellas" />
-      </fieldset>
-      <fieldset>
-        <legend>Opciones de Entrega</legend>
+    <form className={classes["filter-container"]} onSubmit={submitHandler}>
+      <h2 className={classes.title}>Filtros</h2>
+      <ProductFilterBrand />
+      <div className={classes["filter-option-container"]}>
+        <legend className={classes.label}>Opciones de Entrega</legend>
         <Checkbox label="Pickup en Tienda" />
         <Checkbox label="Entrega a domicilio el mismo dia" />
         <Checkbox label="Entrega a domicilio gratis" />
-      </fieldset>
-      <fieldset>
-        <legend>Rango de Precio</legend>
-        <RadioButton id="">Debajo de L. 500.00</RadioButton>
-        <RadioButton id="">Entre L. 500.00 y L. 1,000.00</RadioButton>
-        <RadioButton id="">Entre L. 1,000.00 y L. 2,000.00</RadioButton>
-        <RadioButton id="">Más de L. 2,000 L. 2,000.00</RadioButton>
-        <RadioButton id="">
-          <Field height="63px" width="86px">
-            L. Minimo
-          </Field>
-          <Field height="63px" width="86px">
-            L. Maximo
-          </Field>
-        </RadioButton>
-      </fieldset>
-      <div>
+      </div>
+      <div className={classes["filter-option-container"]}>
+        <legend className={classes.label}>Rango de Precio</legend>
+        <RadioButton id="" label="Debajo de L. 500.00" />
+        <RadioButton id="" label="Entre L. 500.00 y L. 1,000.00" />
+        <RadioButton id="" label="Entre L. 1,000.00 y L. 2,000.00" />
+        <RadioButton id="" label="Más de L. 2,000.00" />
+      </div>
+      <div className={classes["action-container"]}>
         <DangerButton width="173px" height="37">
           BORRAR FILTROS
         </DangerButton>

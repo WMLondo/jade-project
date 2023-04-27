@@ -1,5 +1,17 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { AiOutlineClose } from "react-icons/ai";
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+`;
 
 export const ModalContainer = styled.div`
   display: flex;
@@ -11,6 +23,7 @@ export const ModalContainer = styled.div`
   border-radius: 12px;
   background-color: var(--neutral-color-max);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  animation: ${fadeIn} 0.6s ease-in-out;
 `;
 
 export const SearchBarContainer = styled.div`

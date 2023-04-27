@@ -26,11 +26,10 @@ export const Field = styled.input`
   background: var(--neutral-color-max);
   padding: 0px 8px;
   font-weight: 400;
-  ${(props) => handleValidationState(props.isValid)}
   border-radius: 5px;
   border: 1px solid var(--neutral-color-min-400);
   box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
-
+  ${(props) => handleValidationState(props.isValid)}
   &:hover:enabled {
     border: 1px solid var(--primary-color-500);
     box-shadow: inset 0px 0px 10px rgba(16, 162, 82, 0.25);

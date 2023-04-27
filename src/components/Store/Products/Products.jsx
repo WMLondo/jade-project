@@ -1,29 +1,58 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./Products.module.css";
 import ComboBox from "../../ui/Input/ComboBox/ComboBox";
 import ProductCard from "../../ui/Card/ProductCard/ProductCard";
-import useHttp from "../../../hooks/useHttp";
 import { SORTOPTIONPRODUCT } from "../../../data/SortOptionProduct/SortOptionProduct";
+import LoadingSpinner from "../../ui/LoadingSpinner/LoadingSpinner";
+import { useSearchParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import useQuery from "../../../hooks/use-query";
 
 const Products = ({}) => {
-  const { data, isLoading, error } = useHttp("products");
-  let content = <h3>No existen productos disponibles</h3>;
+  const { isResult, filteredItems } = useQuery();
+  const isLoading = useSelector((state) => state.items.isLoading);
+  const [searchParams, setSearchParams] = useSearchParams();
+  let content = (
+    <h3 className={classes["no-existing-title"]}>
+      Parece ser que no existe algun producto con ese nombre
+    </h3>
+  );
 
-  if (DUMMYPRODUCTS.length > 0) {
-    content = DUMMYPRODUCTS.map((item) => {
-      return (
-        <ProductCard key={item.itemId} item={item} buttonLabel="AGREGAR" />
-      );
-    });
+  if (isLoading) {
+    content = <LoadingSpinner />;
   }
+
+  if (isResult && filteredItems.length > 0) {
+    content = (
+      <div className={classes["products-container"]}>
+        {filteredItems.map((item) => {
+          return (
+            <ProductCard key={item.itemId} item={item} buttonLabel="AGREGAR" />
+          );
+        })}
+      </div>
+    );
+  }
+
+  const onChangeSortHandler = (sortValue) => {
+    searchParams.set("sort", sortValue);
+    setSearchParams(searchParams);
+  };
 
   return (
     <section className={classes.products}>
       <div className={classes.header}>
-        <h2>9,999 resultados para “producto”</h2>
-        <ComboBox options={SORTOPTIONPRODUCT} />
+        <h2>
+          {filteredItems.length} resultados
+          {searchParams.get("query") && ` para "${searchParams.get("query")}"`}
+        </h2>
+        <ComboBox
+          id="sortBy"
+          options={SORTOPTIONPRODUCT}
+          onChange={onChangeSortHandler}
+        />
       </div>
-      <div className={classes["products-container"]}>{content}</div>
+      <div className={classes.body}>{content}</div>
     </section>
   );
 };

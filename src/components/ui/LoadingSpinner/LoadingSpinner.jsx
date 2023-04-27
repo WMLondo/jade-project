@@ -4,7 +4,6 @@ import { StyledSpinner } from "./LoadingSpinner.styles";
 const LoadingSpinner = () => {
   return (
     <StyledSpinner>
-      {" "}
       <circle
         className="path"
         cx="25"

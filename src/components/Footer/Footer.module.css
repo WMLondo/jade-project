@@ -1,0 +1,48 @@
+.footer {
+    padding: 32px;
+    height: 450px;
+    background-color: var(--neutral-color-min-100);
+}
+
+.icons-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 32px 0;
+    gap: 16px
+}
+
+.link-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    margin: 32px 0;
+}
+
+.end-line-container {
+    display: flex;
+    margin: 32px 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    font-family: 'PTSans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-size-m);
+    line-height: 27px;
+    color: var(--neutral-color-max)
+}
+
+.social-media-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
