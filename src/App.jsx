@@ -18,6 +18,7 @@ import Delivery from "./pages/Help/Delivery/Delivery";
 import Return from "./pages/Help/Return/Return";
 import Confirmation from "./pages/Confirmation/Confirmation";
 
+// las rutas son para acceder a las diferentes paginas de la aplicacion
 const router = createBrowserRouter([
   {
     path: "",

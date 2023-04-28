@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+//inicializacion del carrito de compra
 const initialState = {
   cartId: "",
   cartItems: [],
@@ -8,6 +9,7 @@ const initialState = {
   isOpen: false,
 };
 
+//crear funciones reductoras, para manejar, modificar ,eliminar el estado global del carrito
 export const cartSlice = createSlice({
   name: "cart",
   initialState,

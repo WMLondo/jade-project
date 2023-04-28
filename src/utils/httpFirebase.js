@@ -1,6 +1,7 @@
 import { child, get, onValue, ref, set } from "firebase/database";
 import { database } from "../firebase";
-
+//METODOS PARA COMUNICAR LA BASE DE DATOS
+//Obtiene un objeto de una coleccion
 export const httpGetObject = (collectionPath, objectId) => {
   const dbRef = ref(database);
   return get(child(dbRef, `${collectionPath}/${objectId}`))
@@ -16,6 +17,7 @@ export const httpGetObject = (collectionPath, objectId) => {
     });
 };
 
+//obtiene un arreglo de la base de datos *pero solo lo realiza una vez*
 export const httpGetData = (collectionPath) => {
   const dbRef = ref(database);
   return get(child(dbRef, collectionPath))
@@ -31,6 +33,7 @@ export const httpGetData = (collectionPath) => {
     });
 };
 
+//Obtiene un arreglo de la base de datos multiple veces
 export const httpGetRealtime = (collectionPath) => {
   try {
     const dbRef = ref(database, collectionPath);
@@ -51,6 +54,7 @@ export const httpGetRealtime = (collectionPath) => {
   }
 };
 
+//crea un objeto en la base de datos
 export const httpSetData = async (collectionPath, objectElement) => {
   try {
     await set(

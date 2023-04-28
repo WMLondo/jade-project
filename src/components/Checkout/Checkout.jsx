@@ -52,6 +52,7 @@ const Checkout = () => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
 
+  //Encarga de realizar el pedido
   const onSubmit = (data) => {
     setIsLoading(true);
     setValue("date", new Date());
