@@ -16,8 +16,7 @@ import Privacy from "./pages/Help/Privacy/Privacy";
 import Terms from "./pages/Help/Terms/Terms";
 import Delivery from "./pages/Help/Delivery/Delivery";
 import Return from "./pages/Help/Return/Return";
-import Services from "./pages/Services/Services";
-import Payment from "./pages/Payment/Payment";
+import Confirmation from "./pages/Confirmation/Confirmation";
 
 const router = createBrowserRouter([
   {
@@ -35,10 +34,6 @@ const router = createBrowserRouter([
         loader: async () => {
           return httpGetData("items");
         },
-      },
-      {
-        path: "servicios",
-        element: <Services />,
       },
     ],
   },
@@ -91,8 +86,8 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "pay",
-    element: <Payment />,
+    path: "confirmation",
+    element: <Confirmation />,
   },
 ]);
 

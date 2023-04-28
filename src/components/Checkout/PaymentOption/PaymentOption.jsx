@@ -13,12 +13,6 @@ const PaymentOption = ({ register, errors }) => {
       )}
       <div className={classes.row}>
         <RadioButtonForm
-          id="online-payment"
-          label="Pago en Linea"
-          value="online-payment"
-          {...register("payment")}
-        />
-        <RadioButtonForm
           id="cash-payment"
           label="Pago con efectivo"
           value="cash-payment"

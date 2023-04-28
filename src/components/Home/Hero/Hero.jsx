@@ -15,15 +15,6 @@ const Hero = () => {
   return (
     <section className={classes.hero}>
       <div className={classes["options-container"]}>
-        <OptionCard
-          src={firstOptionImage}
-          optionClassName={classes["option-card-1"]}
-          title="Bienestar y relajación"
-          buttonLabel="VER SERVICIOS"
-          imgHeight="610px"
-          imgWidth="100%"
-          buttonClick={() => navigate("servicios")}
-        />
         <div className={classes["column-container"]}>
           <div className={classes["row-container"]}>
             <OptionCard

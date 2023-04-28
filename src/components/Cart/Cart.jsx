@@ -4,8 +4,10 @@ import Button from "../ui/Button/Button";
 import { useNavigate } from "react-router-dom";
 import classes from "./Cart.module.css";
 import { IoBagCheckOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
 
 const Cart = React.forwardRef(({ title, exitHandler }, ref) => {
+  const cart = useSelector((state) => state.cart);
   const navigate = useNavigate();
 
   return (
@@ -20,7 +22,10 @@ const Cart = React.forwardRef(({ title, exitHandler }, ref) => {
         <span onClick={exitHandler} className={classes["return-buying"]}>
           Continuar comprando
         </span>
-        <Button onClick={() => navigate("/checkout")}>
+        <Button
+          onClick={() => navigate("/checkout")}
+          disabled={cart.cartItems.length > 0 ? false : true}
+        >
           CHECKOUT
           <IoBagCheckOutline width="24px" />
         </Button>
