@@ -1,14 +1,39 @@
-.product-container {
+.items {
     padding: 16px;
     width: 100%;
     max-width: calc(100% - 32px);
 }
 
-.result-container {
+
+.price-container {
+    border-radius: 12px;
     position: absolute;
     bottom: 0;
     display: flex;
     flex-direction: column;
-    height: 210px;
+    gap: 16px;
+    background-color: var(--neutral-color-min-100);
     padding: 16px;
+    width: 100%;
+    max-width: calc(100% - 32px);
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.return-buying {
+    color: var(--primary-color-300);
+    font-weight: 400;
+    font-family: "PTSans";
+    cursor: pointer;
+}
+
+.return-buying:hover {
+    text-decoration: underline;
+    color: var(--primary-color)
 }

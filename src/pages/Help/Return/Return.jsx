@@ -5,6 +5,7 @@ import Article from "../../../components/ui/GeneralTemplate/Article/Article";
 import Paragraph from "../../../components/ui/GeneralTemplate/Paragraph/Paragraph";
 import Section from "../../../components/ui/GeneralTemplate/Section/Section";
 import Divider from "../../../components/ui/Divider/Divider";
+import Subtitle from "../../../components/ui/GeneralTemplate/Subtitle/Subtitle";
 import UnorderedList from "../../../components/ui/GeneralTemplate/UnorderedList/UnorderedList";
 import ListElement from "../../../components/ui/GeneralTemplate/UnorderedList/ListElement/ListElement";
 const Return = () => {
@@ -26,11 +27,11 @@ const Return = () => {
                 factura de compra. Los cambios y/o devoluciones podrán ser
                 aceptados únicamente en la estética.
               </ListElement>
-              <ListElemet>
+              <ListElement>
                 Para hacer válido cualquier cambio y/o devolución, el producto
                 deberá presentarse en óptimas condiciones tal cual como fue
                 entregado, conservando la caja y envoltorios.
-              </ListElemet>
+              </ListElement>
               <ListElement>
                 Aplican cambios y/o devoluciones productos comprado con
                 descuento o promoción; en todos los casos, el valor que será
@@ -59,7 +60,7 @@ const Return = () => {
             </UnorderedList>
           </Section>
           <Section>
-            <Subtitle>Devoluciones</Subtitle>
+            <Subtitle>Devoluciones</Subtitle>./src/pages/AboutJade
             <Paragraph>
               El cliente podrá optar por las siguientes alternativas de acuerdo
               a su elección y método de pago:
@@ -83,7 +84,6 @@ const Return = () => {
                 procedimiento detallado más adelante en esta política.
               </ListElement>
             </UnorderedList>
-
             <Paragraph>
               Las devoluciones se harán mediante los mecanismos a continuación
               descritos:

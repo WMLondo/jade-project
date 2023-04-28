@@ -93,6 +93,9 @@ export const cartSlice = createSlice({
       state.cartStatus = "";
       state.isOpen = !state.isOpen;
     },
+    resetCart: (state) => {
+      Object.assign(state, initialState);
+    },
   },
 });
 
@@ -101,6 +104,7 @@ export const {
   reducingItemCart,
   deletingItemCart,
   toggleCart,
+  resetCart,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

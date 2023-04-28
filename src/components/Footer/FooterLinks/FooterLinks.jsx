@@ -9,10 +9,8 @@ const FooterLinks = ({ title, linkOptions }) => {
       <ul className={classes.links}>
         {linkOptions.map((link) => {
           return (
-            <li className={classes.element}>
-              <StyledLink key={link.label} to={link.path.toLowerCase()}>
-                {link.label}
-              </StyledLink>
+            <li className={classes.element} key={crypto.randomUUID()}>
+              <StyledLink to={link.path.toLowerCase()}>{link.label}</StyledLink>
             </li>
           );
         })}

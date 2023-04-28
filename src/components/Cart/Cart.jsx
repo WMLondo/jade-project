@@ -5,11 +5,11 @@ import { useNavigate } from "react-router-dom";
 import classes from "./Cart.module.css";
 import { IoBagCheckOutline } from "react-icons/io5";
 
-const Cart = ({ title, exitHandler }) => {
+const Cart = React.forwardRef(({ title, exitHandler }, ref) => {
   const navigate = useNavigate();
 
   return (
-    <div className={classes.cart}>
+    <div className={classes.cart} ref={ref}>
       <div className={classes.header}>
         <h2 className={classes.title}>
           {title || "¡Encuentra tus productos favoritos y haz tu compra!"}
@@ -27,6 +27,6 @@ const Cart = ({ title, exitHandler }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Cart;

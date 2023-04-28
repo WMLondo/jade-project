@@ -1,0 +1,14 @@
+.row {
+    width: 100%;
+    height: calc(122px - 32px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.payment-error {
+    font-size: var(--font-size-s);
+    color: var(--danger-color);
+    font-family: "PTSans";
+}

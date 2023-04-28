@@ -91,8 +91,12 @@ const Footer = () => {
       </div>
       <Divider />
       <div className={classes["link-container"]}>
-        <FooterLinks title="Acerca de Jades" linkOptions={aboutLinks} />
-        <FooterLinks title="Ayuda" linkOptions={helpLinks} />
+        <FooterLinks
+          key="about"
+          title="Acerca de Jade"
+          linkOptions={aboutLinks}
+        />
+        <FooterLinks key="help" title="Ayuda" linkOptions={helpLinks} />
       </div>
       <Divider />
       <div className={classes["end-line-container"]}>

@@ -1,4 +1,4 @@
-import { child, get, onValue, ref } from "firebase/database";
+import { child, get, onValue, ref, set } from "firebase/database";
 import { database } from "../firebase";
 
 export const httpGetObject = (collectionPath, objectId) => {
@@ -48,5 +48,18 @@ export const httpGetRealtime = (collectionPath) => {
   } catch (error) {
     console.log(error);
     return [];
+  }
+};
+
+export const httpSetData = async (collectionPath, objectElement) => {
+  try {
+    await set(
+      ref(database, `${collectionPath}/${crypto.randomUUID()}`),
+      objectElement
+    );
+    return true;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Error al insertar objeto en Firebase Realtime Database");
   }
 };

@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import classes from "./Products.module.css";
 import ComboBox from "../../ui/Input/ComboBox/ComboBox";
 import ProductCard from "../../ui/Card/ProductCard/ProductCard";
-import { SORTOPTIONPRODUCT } from "../../../data/SortOptionProduct/SortOptionProduct";
 import LoadingSpinner from "../../ui/LoadingSpinner/LoadingSpinner";
 import { useSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import useQuery from "../../../hooks/use-query";
+import { sortOptionsProduct } from "../../../data/sortOptionsProduct";
 
 const Products = ({}) => {
   const { isResult, filteredItems } = useQuery();
@@ -48,7 +48,7 @@ const Products = ({}) => {
         </h2>
         <ComboBox
           id="sortBy"
-          options={SORTOPTIONPRODUCT}
+          options={sortOptionsProduct}
           onChange={onChangeSortHandler}
         />
       </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "../../../components/ui/GeneralTemplate/Container/Container";
+import Subtitle from "../../../components/ui/GeneralTemplate/Subtitle/Subtitle";
 import Title from "../../../components/ui/GeneralTemplate/Title/Title";
 import Article from "../../../components/ui/GeneralTemplate/Article/Article";
 import Paragraph from "../../../components/ui/GeneralTemplate/Paragraph/Paragraph";
@@ -97,34 +98,6 @@ const Delivery = () => {
           </Section>
           <Section>
             <Subtitle>Tiempos de entrega</Subtitle>
-            <Paragraph>
-              Los tiempos de entrega de los artículos serán de la siguiente
-              manera:
-            </Paragraph>
-            <UnorderedList>
-              <ListElement>
-                Productos entregados en Tegucigalpa, San Pedro Sula y La Ceiba
-                tendrán un tiempo de envío/entrega de 2-4 días hábiles
-                posteriores a la compra.
-              </ListElement>
-              <ListElement>
-                Productos entregados en el resto del Territorio Nacional tendrán
-                un tiempo de envío/entrega de 4-8 días hábiles posteriores a la
-                compra.
-              </ListElement>
-              <ListElement>
-                Los días hábiles son considerados de lunes a viernes. Por
-                ejemplo, una orden que ingresa un sábado su primer día hábil es
-                el siguiente lunes.
-              </ListElement>
-              <ListElement>
-                El día hábil termina a las 5 pm. Por ejemplo, una orden que
-                ingresa el día lunes a las 8pm es considerada como si hubiera
-                ingresado el siguiente día martes.
-              </ListElement>
-            </UnorderedList>
-          </Section>
-          <Section>
             <Paragraph>
               Los tiempos de entrega de los artículos serán de la siguiente
               manera:

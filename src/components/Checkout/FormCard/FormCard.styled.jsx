@@ -8,8 +8,9 @@ export const Title = styled.h3`
 `;
 
 export const FormContainer = styled.div`
+  position: relative;
   width: ${(props) => props.width || "696px"};
-  padding: 16px;
+  padding: ${(props) => props.p || "16px"};
   height: ${(props) => props.height || "auto"};
   display: flex;
   justify-content: flex-start;

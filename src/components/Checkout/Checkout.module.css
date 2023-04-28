@@ -6,3 +6,11 @@
     padding: 64px 32px;
     gap: 32px;
 }
+
+.configuration-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+}

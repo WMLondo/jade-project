@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./CheckoutComboBox.module.css";
 import Label from "../../ui/Label/Label";
 import ErrorMessage from "../../ui/Input/ErrorMessage/ErrorMessage";
-import ComboBox from "../../ui/Input/ComboBox/ComboBox";
+import { ComboBoxForm } from "../../ui/Input/ComboBox/ComboBox";
 
 const CheckoutComboBox = ({
   id,
@@ -16,7 +16,7 @@ const CheckoutComboBox = ({
   return (
     <div className={classes.input}>
       <Label htmlFor={id}>{label}</Label>
-      <ComboBox width={w} height={h} options={data} {...register} />
+      <ComboBoxForm width={w} height={h} options={data} {...register} />
       <ErrorMessage>{errorMessage}</ErrorMessage>
     </div>
   );

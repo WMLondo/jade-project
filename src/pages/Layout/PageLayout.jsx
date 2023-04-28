@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   Outlet,
   createSearchParams,
@@ -14,13 +14,18 @@ import { useDispatch, useSelector } from "react-redux";
 import SearchBarModal from "../../components/ui/Overlay/SearchBarModal/SearchBarModal";
 import { useState } from "react";
 import ScrollToTop from "../../helpers/ScrollToTop";
+import useOnClickOutside from "../../hooks/use-on-click-outsite";
 
 const PageLayout = () => {
   const dispatch = useDispatch();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const searchRef = useRef();
   const navigate = useNavigate();
   const cartIsOpen = useSelector((state) => state.cart.isOpen);
+  const cartRef = useRef();
   const cartStatus = useSelector((state) => state.cart.cartStatus);
+  useOnClickOutside(searchRef, () => setIsSearchOpen(false));
+  useOnClickOutside(cartRef, () => dispatch(toggleCart()));
   ScrollToTop();
 
   const toggleSearch = () => {
@@ -45,10 +50,15 @@ const PageLayout = () => {
   return (
     <>
       <Overlay isOpen={cartIsOpen} justifyContent="flex-end">
-        <Cart title={cartStatus} exitHandler={() => dispatch(toggleCart())} />
+        <Cart
+          title={cartStatus}
+          ref={cartRef}
+          exitHandler={() => dispatch(toggleCart())}
+        />
       </Overlay>
       <Overlay isOpen={isSearchOpen}>
         <SearchBarModal
+          ref={searchRef}
           exitHandler={toggleSearch}
           searchSubmitHandler={querySearchHandler}
         />
