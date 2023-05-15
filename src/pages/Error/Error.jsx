@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "../../components/ui/Button/Button";
+import Button from "../../components/ui/Button/StandardButton/StandardButton";
 import classes from "./Error.module.css";
 
 const Error = () => {

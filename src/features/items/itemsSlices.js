@@ -1,4 +1,4 @@
-import { httpGetObject } from "../../utils/httpFirebase";
+import { httpGetObject } from "../../utils/http-firebase";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -38,6 +38,7 @@ export const itemsSlice = createSlice({
       state.isLoading = true;
       const { query, sort } = action.payload;
       const filteredItems = [];
+
       for (const item of state.items) {
         if (
           query &&
